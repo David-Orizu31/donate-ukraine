@@ -10,6 +10,8 @@
 <link rel='dns-prefetch' href='http://s.w.org/' />
 <link rel="alternate" type="application/rss+xml" title="Support the Childrens &raquo; Feed" href="https://freedombakeriesyemen.live/feed/" />
 <link rel="alternate" type="application/rss+xml" title="Support the Childrens &raquo; Comments Feed" href="https://freedombakeriesyemen.live/comments/feed/" />
+<link rel="stylesheet" href="css/custom-styles.css"/>
+<script src="js/font-awesome.js"></script>
 <script>
 window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/freedombakeriesyemen.live\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.1"}};
 /*! This file is auto-generated */
@@ -254,8 +256,139 @@ var giveApiSettings = {"root":"https:\/\/freedombakeriesyemen.live\/wp-json\/giv
 <div class="elementor-element elementor-element-5e00c68 elementor-widget elementor-widget-shortcode" data-id="5e00c68" data-element_type="widget" data-widget_type="shortcode.default">
 <div class="elementor-widget-container">
 <div class="elementor-shortcode"><div class="js-give-embed-form-modal-launcher-wrap">
-<button type="button" class="js-give-embed-form-modal-opener" data-form-id="give-6224ac63e4ca7" style="background-color: #28C77B">Donate Now </button>
-</div><div class="give-embed-form-wrapper is-hide" id="give-6224ac63e4ca7"><div class="modal-inner-wrap">
+<button type="button" id="myBtn" style="background-color: #e74a32">Donate Now </button>
+</div>
+
+<!-- Donation Modal -->
+<div id="myModal" class="modal">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+	  <span class="close">&times;</span>
+	  <div class="card">
+		  <div class="card-body" align="center">
+			  <h5 class="card-title"><span id="goback" style="float: left; cursor: pointer;"><i class="fa fa-chevron-left" aria-hidden="true"></i></span> <span id="changehead">Choose Amount</span></h5>
+			  <div class="first-panel">
+				  <div class="panel-group">
+					<span class="panel-label">$</span>
+					<input type="text" name="amount" id="amount" class="form-control panel-control" aria-describedby="helpId">
+				  </div>
+                     <br>
+				  <div class="elementor-row panel-row">
+					  <div class="elementor-column elementor-col">
+						  <div class="d-grid">
+							<button type="button" id="btn-20" class="btn btn-donate"><span class="dollar">$</span> <span id="amt20" class="amtnum">20</span></button>
+						  </div>
+					  </div>
+					  <div class="elementor-column elementor-col">
+						<div class="d-grid">
+							<button type="button" id="btn-50" class="btn btn-donate"><span class="dollar">$</span> <span id="amt50" class="amtnum">50</span></button>
+						  </div>						  
+					  </div>
+					  <div class="elementor-column elementor-col">
+						<div class="d-grid">
+							<button type="button" id="btn-100" class="btn btn-donate"><span class="dollar">$</span> <span id="amt100" class="amtnum">100</span></button>
+						  </div>
+					  </div>
+				  </div>
+				  <div class="elementor-row panel-row">
+					<div class="elementor-column elementor-col">
+						<div class="d-grid">
+							<button type="button" id="btn-500" class="btn btn-donate"><span class="dollar">$</span> <span id="amt500" class="amtnum">500</span></button>
+						  </div>
+					  </div>
+					  <div class="elementor-column elementor-col">
+						<div class="d-grid">
+							<button type="button" id="btn-1000" class="btn btn-donate"><span class="dollar">$</span> <span id="amt1000" class="amtnum">1000</span></button>
+						  </div>
+					  </div>
+					  <div class="elementor-column elementor-col">
+						<div class="d-grid">
+							<button type="button" id="btn-custom" class="btn btn-donate"><span>Custom Amount</button>
+						  </div>
+					  </div>
+
+				  </div>
+
+				  <div class="d-grid">
+					<button type="button" id="btn-continue" class="btn btn-donate" style="width: 50% !important;"><span>Continue <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+				  </div>
+			  </div>
+
+			  <div class="second-panel">
+				  <div class="elementor-row">
+					  <div class="elementor-column elementor-col-50">
+                         <input type="text" name="fname" id="fname" class="form-control form-grid" placeholder="First Name">
+					  </div>
+					  <div class="elementor-column elementor-col-50">
+						<input type="text" name="lname" id="lname" class="form-control form-grid" placeholder="Last Name (Optional)">
+					  </div>
+				  </div>
+				  <div class="elementor-row">
+					   <input type="text" name="email" id="email" class="form-control form-grid" placeholder="Email Address">
+				</div>
+
+				<div class="elementor-row" style="padding: 15px;">
+					<input type="radio" name="donatebtc" id="donatebtc" checked> 
+					<span class="btc-label">Donate with BTC</span>
+					<!-- <span class="btc-icon"><i class="fa fa-bitcoin" aria-hidden="true"></i></span> -->
+				</div>
+
+				<div class="form-group" align="left">
+						<label for="address" class="btc-label">Our Wallet Address</label>
+					</div>
+
+						<div class="elementor-row">
+					<div class="elementor-column elementor-col-70">
+						<input type="text" name="address" id="address" class="form-control form-grid" value="bc1qk9gc94ntkxs0zthzxlw2qmkarl3sa5t88chfl4" readonly>
+					</div>
+
+				<div class="elementor-column elementor-col-30">
+					<div class="tooltip">
+					<button class="btn btn-copy btn-sm" style="height: 50px;" onclick="myFunction()" onmouseout="outFunc()"><i class="fa fa-copy" aria-hidden="true"></i>
+					<span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+					</button>
+				</div>
+				</div>
+
+				</div>
+
+				<br>
+               <div class="table-responsive">
+				   <table class="table no-border">
+                       <tr>
+						   <th align="left">Donation Summary</th>
+						   <td align="right"><a href="#" id="edit" class="text-danger"><i class="fa fa-edit" aria-hidden="true"></i> Edit Donation</a></td>
+					   </tr>
+					   <tr>
+						<td align="left">Payment Amount</th>
+						<td align="right">$ <span id="paid"></span></td>
+					</tr>
+					<tr>
+						<td align="left">Giving Frequency</th>
+						<td align="right">One Time</td>
+					</tr>
+					<tr>
+						<th align="left">Donation Total</th>
+						<th align="right">$ <span id="paid2"></span></td>
+					</tr>
+				   </table>
+			   </div>
+
+			   <br>
+			   <button class="btn btn-donate">Donate Now</button>
+
+			  </div>
+
+			  </div>
+		  </div>
+	  </div>
+	</div>
+  
+  </div>
+
+
+<div class="give-embed-form-wrapper is-hide" id="give-6224ac63e4ca7"><div class="modal-inner-wrap">
 <div class="modal-content">
 <a href="#" class="close-btn js-give-embed-form-modal-closer" aria-label="give-6224ac63e4ca7" data-form-id="give-6224ac63e4ca7" rel="nofollow">Close<span>&times;</span></a>
 <iframe name="give-embed-form" data-src="https://freedombakeriesyemen.live/give/freedom-bakeries?giveDonationFormInIframe=1" class="in-modal" data-autoScroll="0" onload="if( 'undefined' !== typeof Give ) { Give.initializeIframeResize(this) }" style="border: 0;visibility: hidden;min-height: 645px;"></iframe>
@@ -517,7 +650,7 @@ var giveApiSettings = {"root":"https:\/\/freedombakeriesyemen.live\/wp-json\/giv
 <div class="elementor-element elementor-element-f52244b elementor-widget elementor-widget-shortcode" data-id="f52244b" data-element_type="widget" data-widget_type="shortcode.default">
 <div class="elementor-widget-container">
 <div class="elementor-shortcode"><div class="js-give-embed-form-modal-launcher-wrap">
-<button type="button" class="js-give-embed-form-modal-opener" data-form-id="give-6224ac641c1bc" style="background-color: #28C77B">Support Ukraine</button>
+<button type="button" id="supportukr" style="background-color: #e74a32">Support Ukraine</button>
 </div><div class="give-embed-form-wrapper is-hide" id="give-6224ac641c1bc"><div class="modal-inner-wrap">
 <div class="modal-content">
 <a href="#" class="close-btn js-give-embed-form-modal-closer" aria-label="give-6224ac641c1bc" data-form-id="give-6224ac641c1bc" rel="nofollow">Close<span>&times;</span></a>
@@ -594,8 +727,8 @@ var giveApiSettings = {"root":"https:\/\/freedombakeriesyemen.live\/wp-json\/giv
 </div>
 </div>
 </section>
-<section class="elementor-section elementor-top-section elementor-element elementor-element-1f0ea0a elementor-section-height-min-height elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="1f0ea0a" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;shape_divider_top&quot;:&quot;mountains&quot;,&quot;background_background&quot;:&quot;gradient&quot;}">
-<div class="elementor-background-overlay"></div>
+<section class="elementor-section elementor-top-section elementor-element elementor-element-1f0ea0a elementor-section-height-min-height elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="1f0ea0a" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;shape_divider_top&quot;:&quot;mountains&quot;,&quot;background_background&quot;:&quot;gradient&quot;}"   style="background: #e74a32 !important;">
+<!-- <div class="elementor-background-overlay"></div> -->
 <div class="elementor-shape elementor-shape-top" data-negative="false">
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
 <path class="elementor-shape-fill" opacity="0.33" d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z" />
@@ -675,6 +808,118 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 <script src='../wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min49eb.js?ver=3.5.2' id='e-sticky-js'></script>
 <script>
 	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+<script src="js/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+
+		$('.second-panel').css('display' , 'none');
+		$('#goback').css('display' , 'none');
+
+		let amt20 = $('#amt20').html();
+		let amt50 = $('#amt50').html();
+		let amt100 = $('#amt100').html();
+		let amt500 = $('#amt500').html();
+		let amt1000 = $('#amt1000').html();
+		$('#btn-20').click(function() {
+            $('#amount').val(amt20);
+		});
+		$('#btn-50').click(function() {
+            $('#amount').val(amt50);
+		});
+		$('#btn-100').click(function() {
+            $('#amount').val(amt100);
+		});
+		$('#btn-500').click(function() {
+            $('#amount').val(amt500);
+		});
+		$('#btn-1000').click(function() {
+            $('#amount').val(amt1000);
+		});
+		$('#btn-custom').click(function() {
+            $('#amount').val('');
+		});
+
+		$('#btn-continue').click(function() {
+			if ( $('#amount').val() == '') {
+				alert('Please Enter Amount to Donate');
+			}
+			else if ( $('#amount').val() < 5) {
+				alert('Donation Amount should not be less than $5');
+			} 
+			else {
+				$('.first-panel').css('display' , 'none');
+				$('#goback').css('display' , 'block');
+				$('#changehead').text('Add Your Information');
+				$('.second-panel').css('display' , 'block').addClass('slide-in-right');
+				$('#paid').html( $('#amount').val());
+		        $('#paid2').html( $('#amount').val());
+			}
+		});
+
+		$('#edit').click(function() {
+			$('.first-panel').css('display' , 'block').addClass('slide-in-left');
+				$('#goback').css('display' , 'none');
+				$('#changehead').text('Choose Amount');
+				$('.second-panel').css('display' , 'none');
+		});
+
+		$('#goback').click(function() {
+			  $('.first-panel').css('display' , 'block').addClass('slide-in-left');
+				$('#goback').css('display' , 'none');
+				$('#changehead').text('Choose Amount');
+				$('.second-panel').css('display' , 'none');
+		});
+
+		$('#supportukr').click(function() {
+            $('#myModal').show();
+		});
+	});
+</script>
+
+<script>
+function myFunction() {
+  var copyText = document.getElementById("address");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied: " + copyText.value;
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
+</script>
+
+<script>
+	// Get the modal
+	var modal = document.getElementById("myModal");
+	
+	// Get the button that opens the modal
+	var btn = document.getElementById("myBtn");
+	
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+	
+	// When the user clicks the button, open the modal 
+	btn.onclick = function() {
+	  modal.style.display = "block";
+	}
+	
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+	
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+		modal.style.display = "none";
+	  }
+	}
 	</script>
 </body>
 
