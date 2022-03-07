@@ -244,6 +244,9 @@ html, body {
     .no-border {
       font-size: 14px;
     }
+    .img-response {
+      width: 100%;
+    }
   }
 
   .banner-1 {
